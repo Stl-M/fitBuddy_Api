@@ -20,9 +20,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(('public')));
 
-app.use(cors({origin: ['http://localhost:3000',
-                        'http://fitBuddy.onrender.com',
-                    'https://fitbuddy-9zoy.onrender.com/']}))
+app.use(cors({origin: ['http://localhost:3000', 'https://fitbuddy-9zoy.onrender.com/']}))
 
 //routes
 
