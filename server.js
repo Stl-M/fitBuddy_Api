@@ -32,7 +32,7 @@ const port = process.env.PORT || 4000
 //connect to db
 mongoose.connect(process.env.MONG_URI)
 .then(() =>{
-    app.listen(process.env.PORT, ()=> {
+    app.listen(port, ()=> {
         console.log('connected to db & running on port  ${port}:)');
     })
 })
