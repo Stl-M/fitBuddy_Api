@@ -22,16 +22,18 @@ app.use(express.static(('public')));
 
 app.use(cors({origin: ['http://localhost:3000', 'https://fitbuddy-9zoy.onrender.com/']}))
 
-//routes
+//routes///htttp://localhost:4000//
 
 app.use('/api/workouts', workoutRoutes);
 app.use('/api/user', userRoutes);
+
+const port = process.env.PORT || 4000
 
 //connect to db
 mongoose.connect(process.env.MONG_URI)
 .then(() =>{
     app.listen(process.env.PORT, ()=> {
-        console.log('connected to db & running on port 4000:)');
+        console.log('connected to db & running on port  ${port}:)');
     })
 })
 .catch((err) =>{console.log(err)});
