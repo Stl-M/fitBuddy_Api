@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(('public')));
 
-app.use(cors({origin: ['http://localhost:3000', 'https://fitbuddy-9zoy.onrender.com/']}))
+app.use(cors({origin: ['https://fitbuddy-9zoy.onrender.com/', 'http://localhost:3000']}))
 
 //routes///htttp://localhost:4000//
 
@@ -33,7 +33,7 @@ const port = process.env.PORT || 4000
 mongoose.connect(process.env.MONG_URI)
 .then(() =>{
     app.listen(port, ()=> {
-        console.log('connected to db & running on port  ${port}:)');
+        console.log('connected to db & running on port ${port}');
     })
 })
 .catch((err) =>{console.log(err)});
